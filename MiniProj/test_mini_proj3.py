@@ -47,15 +47,15 @@ def test_make_appointment_text():
 
     assert driver.current_url == "https://katalon-demo-cura.herokuapp.com/#appointment"
 
-    #Located the dropdown and select any option from dropdown
+    #Locate the dropdown and select any option from dropdown
     dropdown_element = driver.find_element(By.XPATH, "//select[@id='combo_facility']")
     select_from_dropdown = Select(dropdown_element)
 
-    #Slect 2nd option
+    #Select 2nd option
     select_from_dropdown.select_by_value("Hongkong CURA Healthcare Center")
     allure.attach(driver.get_screenshot_as_png(),name="Appointment page", attachment_type=AttachmentType.PNG)
 
-    #Slect 3rd Option
+    #Select 3rd Option
     select_from_dropdown.select_by_index(2)
     allure.attach(driver.get_screenshot_as_png(), name="Appointment page", attachment_type=AttachmentType.PNG)
 
